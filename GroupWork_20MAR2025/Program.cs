@@ -1,13 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Diagnostics;
 
 public class LongestConsecutiveSequence
 {
+
+
     public static void Main()
     {
         int[] nums = { 100, 3, 2, 0, 55, 1, 22 };
-        Console.WriteLine(LongestConsecutive(nums));
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.Start();
+        LongestConsecutive(nums);
+        stopwatch.Stop();
+
+        Console.WriteLine("LongestConsecutive runtime:" + stopwatch.ElapsedTicks);
+
+        stopwatch.Reset();
+        
+        stopwatch.Start();
+        LongestConsecutiveWithMap(nums);
+        stopwatch.Stop();
+
+        Console.WriteLine("LongestConsecutiveWithMap runtime:" + stopwatch.ElapsedTicks);
+
+        stopwatch.Reset();
+
+        stopwatch.Start();
+        LongestConsecutive2(nums);
+        stopwatch.Stop();
+
+        Console.WriteLine("LongestConsecutive2 runtime:" + stopwatch.ElapsedTicks);
+
+
+
     }
 
     public static int LongestConsecutiveWithMap(int[] nums)
@@ -79,7 +105,7 @@ public class LongestConsecutiveSequence
         return maxConsecutive;
     }
 
-    public int LongestConsecutive2(int[] nums)
+    public static int LongestConsecutive2(int[] nums)
     {
         if (nums.Length < 2)
         {
