@@ -7,8 +7,6 @@ Console.WriteLine("Hello, People!");
 LongestConsecutiveSequence.Main();
 
 
-// wow! "commit all and sync" and I saw Lepolean's on my Visual Studio app
-
 public class LongestConsecutiveSequence
 {
     public static void Main()
@@ -93,7 +91,6 @@ public class LongestConsecutiveSequence
             return nums.Length;
         }
 
-
         HashSet<int> hashSet = new HashSet<int>(nums);
         int longestStreak = 0;
 
@@ -114,7 +111,6 @@ public class LongestConsecutiveSequence
                 longestStreak = Math.Max(longestStreak, currentStreak);
             }
         }
-
         return longestStreak;
     }
 }
