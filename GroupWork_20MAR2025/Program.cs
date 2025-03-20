@@ -9,31 +9,7 @@ public class LongestConsecutiveSequence
     public static void Main()
     {
         int[] nums = { 100, 3, 2, 0, 55, 1, 22 };
-        Stopwatch stopwatch = new Stopwatch();
-        stopwatch.Start();
-        LongestConsecutive(nums);
-        stopwatch.Stop();
-
-        Console.WriteLine("LongestConsecutive runtime:" + stopwatch.ElapsedTicks);
-
-        stopwatch.Reset();
-        
-        stopwatch.Start();
-        LongestConsecutiveWithMap(nums);
-        stopwatch.Stop();
-
-        Console.WriteLine("LongestConsecutiveWithMap runtime:" + stopwatch.ElapsedTicks);
-
-        stopwatch.Reset();
-
-        stopwatch.Start();
-        LongestConsecutive2(nums);
-        stopwatch.Stop();
-
-        Console.WriteLine("LongestConsecutive2 runtime:" + stopwatch.ElapsedTicks);
-
-
-
+       
     }
 
     public static int LongestConsecutiveWithMap(int[] nums)
