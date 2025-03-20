@@ -17,9 +17,7 @@ HashSet<int> hashSet = new HashSet<int>();
 foreach (int n in nums)
 
 {
-
     hashSet.Add(n);
-
 }
 
 int maxConsecutive = 0;
@@ -27,19 +25,12 @@ int maxConsecutive = 0;
 foreach (int n in hashSet)
 
 {
-
     int counter = 1;
-
     int firstElement = n;
-
     while (hashSet.Contains(firstElement + 1))
-
     {
-
         firstElement += 1;
-
         counter += 1;
-
     }
 
     if (counter > maxConsecutive)
