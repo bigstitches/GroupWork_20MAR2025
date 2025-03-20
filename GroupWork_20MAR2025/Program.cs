@@ -108,6 +108,43 @@ public class LongestConsecutiveSequence
         }
         return longestStreak;
     }
+
+    public class Solution
+    {
+        public int LongestConsecutive(int[] nums)
+        {   // have the number of nums available         
+            // can i use that one highest instance algorthithm        
+            // in a hashmap?
+            int maxCount = 0;         
+            Dictionary<int, int> dictionary = new();         
+            foreach(int num in nums) {             
+                if (dictionary.TryAdd(num, 1)) {                 
+                    if (dictionary.ContainsKey(num - 1) && dictionary.ContainsKey(num + 1)) 
+                    {                     
+                        int ahead = dictionary[num + 1];                     
+                        int behind = dictionary[num - 1];                     
+                        dictionary[num] = dictionary[num + ahead] + dictionary[num - behind] + 1;                     
+                        dictionary[num + ahead] = dictionary[num];                     
+                        dictionary[num - behind] = dictionary[num];                 
+                    } 
+                    else if (dictionary.ContainsKey(num-1)) 
+                    {                     
+                        int sequence = dictionary[num - 1];                     
+                        dictionary[num - sequence]++;                     
+                        dictionary[num] = dictionary[num - sequence];                 
+                    } 
+                    else if (dictionary.ContainsKey(num+1)) 
+                    {                     
+                        int sequence = dictionary[num + 1];                     
+                        dictionary[num + sequence]++;                    
+                        dictionary[num] = dictionary[num + sequence];                 
+                    }             
+                }             
+                if (dictionary[num] > maxCount) {maxCount = dictionary[num];}
+            }         
+            return maxCount;     
+        }
+    }
 }
 
 
