@@ -42,9 +42,33 @@ public class LongestConsecutiveSequence
                 maxConsecutive = counter;
             }
         }
-
         return maxConsecutive;
     }
-}
+
+    public int LongestConsecutive2(int[] nums)
+    {
+        if nums.Length < 2 { return nums.Length; }
+
+        HashSet<int> hashSet = new HashSet<int>(nums);
+        int longestStreak = 0;
+
+        foreach (int num in nums)
+        {
+            if (!nums.Contains(nums-1))
+            {
+                int currentNum = num;
+                int currentStreak = 1;
+            
+
+                while (nums.Contains(currentNum + 1))
+                {
+
+                }
+        }
+
+
+
+
+    }
 
 
