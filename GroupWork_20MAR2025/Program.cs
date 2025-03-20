@@ -2,11 +2,6 @@
 using System.Collections.Generic;
 
 
-// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, People!");
-LongestConsecutiveSequence.Main();
-
-
 public class LongestConsecutiveSequence
 {
     public static void Main()
